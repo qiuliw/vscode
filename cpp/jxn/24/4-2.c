@@ -7,7 +7,7 @@ int main(){
     x=y=0;
     for(i=0;i<3;++i){
         for(j=0;j<4;++j){
-            scanf("%d",b[i][j]);
+            scanf("%d",&b[i][j]);
             if(b[x][y]<b[i][j]){
                 x=i;
                 y=j;

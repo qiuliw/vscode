@@ -7,7 +7,7 @@
 int main(){
     char text[10],*p;
     p=text;
-    gets(text);
+    scanf("%s",text);
     while(*p){
         if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) {
             // 判断字符是否为字母

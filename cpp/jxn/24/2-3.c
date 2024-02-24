@@ -14,7 +14,7 @@ typedef struct{
 int main(){
     Student s[N];
     for(int i=0;i<N;++i){
-        gets(s[i].name);
+        scanf("%s",s[i].name);
         for(int j=0;j<4;++j)
             scanf("%f",&s[i].score[j]);
     }

@@ -12,7 +12,7 @@ int fine(int n){
     return sum==n;
 }
 
-void main(){   
+int main(){   
     for(int i=2;i<1000;++i)
         if(fine(i))
             printf("%5d",i);

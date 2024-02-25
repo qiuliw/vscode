@@ -8,7 +8,7 @@ CODE SEGMENT
 START:
     MOV DX,DATA
     MOV DS,DX
-    
+
     MOV AL,DAT
     CMP AL,DAT+1
     JAE L1

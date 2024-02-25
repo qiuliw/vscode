@@ -1,0 +1,34 @@
+计算以下函数的值
+S=
+2x(x<0
+3x(0<=x<=10
+4x(10<x
+DATA SEGMENT
+    RESULT DB ?
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE,DS:DATA
+START:
+    MOV AH,1
+    INT 21H
+    CMP AL,0
+    JL L1
+    CMP AL,10
+    JL L2
+    SAL AL,1
+    SAL AL,1
+    JMP NEXT
+L1:
+    SAL AL,1
+    JMP NEXT
+L2:
+    MOV AH,AL
+    SAL AL,1
+    ADD AL,AH
+NEXT:
+    MOV RESULT,AL
+    
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START

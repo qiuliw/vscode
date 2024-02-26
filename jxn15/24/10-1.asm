@@ -1,0 +1,34 @@
+;设有两个3字节数据，分别存放在数据段的 DATA1 和 DATA2 变量中，定义如下， 
+;DATA1 DB 85H,27H,4AH
+;DATA1 DB 85H,27H,4AH
+;编写完整程序实现这个数的和，并存放到字节变量 SUM 中
+
+DATA SEGMENT
+    DATA1 DB 85H,27H,4AH
+    DATA1 DB 85H,27H,4AH
+    SUM DB 0,0,0
+DATA ENDS
+CODE SEGMENT
+    ASSUME DS:DATA,CS:CODE
+START:
+    MOV DX,DATA
+    MOV DS,DX
+
+    LEA SI,DATA1
+    LEA DI,DATA2
+    LEA BX,SUM
+    MOV CX,3
+    CLC
+L0:
+    MOV AL,[SI]
+    ADC AL,[DI]
+    MOV [BX],AL
+    INC SI
+    INC DI
+    LOOP L0
+
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START
+

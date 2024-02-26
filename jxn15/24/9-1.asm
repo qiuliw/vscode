@@ -1,0 +1,20 @@
+;编写一个程序，要求运行时屏幕显示 BELL’，同时响铃一次（响铃的ASCII码为07H）
+;响铃就是显示响铃的ASCII
+
+DATA SEGMENT
+    STR DB 'BELL',07H,'$'
+DATA ENDS
+CODE SEGMENT
+    ASSUME DS:DATA,CS:CODE
+START:
+    MOV DX,DATA
+    MOV DS,DX
+
+    LEA DX,STR
+    MOV AH,9
+    INT 21H
+
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START

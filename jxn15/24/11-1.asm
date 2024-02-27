@@ -92,4 +92,3 @@ NEXT:
     INT 21H
 CODE ENDS
     END START
-t

@@ -12,5 +12,5 @@ int main(){
         sum +=h;//反弹
     }
     sum-=h;//第10次不反弹
-    printf("总路程=%lf,第十次起跳距离=%lf", sum, h);
+    printf("总路程=%.2lf,第十次起跳距离=%.2lf", sum, h);
 }

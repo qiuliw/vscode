@@ -30,7 +30,7 @@ int main()
     }
 
     //剩一人
-    for(i=1;i<nmax;i++)
+    for(i=0;i<nmax;i++)
         if(num[i]!=0)
             printf("%d ",num[i]);
 

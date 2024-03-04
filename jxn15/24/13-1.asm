@@ -3,10 +3,12 @@
 ;若三个数都相同则送 OFFFFH 到单元。
 
 ;三数两两比较，统计相同的对数。有以下几种可能
-;a b b 0 直接送 a地址
+
 ;b b b 3 送 0FFFH
 
-;b a b 1 再次比较，不同则送后面的数地址
+;确定了必有1个不同的，两两比较。相同则送剩余的一个不同的到DATE0
+;a b b 1 
+;b a b 1
 ;b b a 1
 
 DATA SEGMENT
@@ -21,6 +23,7 @@ START:
 
     MOV DL,0
 
+;三数两两比较
     LEA SI,DAT0
     MOV AL,[SI]
     CMP AL,[SI+1];1-2
@@ -36,27 +39,27 @@ L2:
     JNZ L3
     INC DL
 L3:
-    CMP DL,0
-    JZ ZERO
     CMP DL,3
     JZ THREE
-    
-;ONE
-    MOV AL,[SI]
-    CMP AL,[SI+1]
-    JZ L4
-    INC SI
-    MOV DATE0,SI
+
+;ONE 必有一个不同
+    CMP AL,[SI+1];1-2
+    JNZ L4
+    LEA AH,DAT0+2;1-2相同，送3
+    MOV DATE0,AH
     JMP NEXT
 L4:
-    ADD SI,2
-    MOV DATE0,SI
+    CMP AL,[SI+2];1-3
+    JNZ L5
+    LEA AH,DAT0+1;1-3相同，送2
+    MOV DATE0,AH
+    JMP NEXT
+L5:
+    LEA AH,DAT0;剩 2-3相同的可能，送1
+    MOV DATE0,AH
     JMP NEXT
 
-ZERO:
-    MOV DATE0,SI
-    JMP NEXT
-
+;三个都相同
 THREE:
     MOV DATE0,0FFFFH
 

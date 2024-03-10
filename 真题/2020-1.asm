@@ -1,0 +1,17 @@
+;编写计算 S=1+2+⋯••+100的程序。结果存放到AX寄存器即可。
+CODE SEGMENT
+    ASSUME CS:CODE
+START:
+    MOV CX,100
+    MOV DX,0
+    MOV AX,0
+
+L1:
+    INC DX
+    ADD AX,DX
+    LOOP L1
+
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START

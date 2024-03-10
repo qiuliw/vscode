@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- nav -->
+    <div class="nav">
+        <ul>
+            <li><a href="#page1">首页</a></li>
+            <li><a href="#page2">音乐</a></li>
+            <li><a href="#page3">红楼梦</a></li>
+            <li><a href="#page3">红楼梦</a></li>
+            <li><a href="#page3">红楼梦</a></li>
+        </ul>
+        <div>
+            <div id="music">
+                <div id="textMusic">播放音乐</div>
+                <audio 
+                    autoplay="autoplay" 
+                    loop="loop" 
+                    preload="auto"
+                    controls="controls"
+                    src="./music/Que.mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <!-- nav end -->
+        <!-- page1 start -->
+        <div class="page" id="page1" style="--c: lightcoral;">
+            <!-- 锚点 -->
+            <!-- <a href="#page3">点我</a> -->11111
+            
+        </div>
+        <!-- page1 end -->
+
+        <!-- page2 start -->
+        <div class="page" id="page2" style="--c: lightseagreen;">
+            <!-- 手风琴 -->
+            <div class="shell">
+                <div class="box">
+                    <img src="../img/1.jpg">
+                    <span>Image</span>
+                </div>
+                <div class="box">
+                    <img src="../img/2.jpg">
+                    <span>Video</span>
+                </div>
+                <div class="box">
+                    <img src="../img/3.jpg">
+                    <span>File</span>
+                </div>
+                <div class="box">
+                    <img src="../img/4.jpg">
+                    <span>Music</span>
+                </div>
+                <div class="box">
+                    <img src="../img/5.jpg">
+                    <span>tyric</span>
+                </div>
+            </div>
+            <!-- 手风琴 end -->
+        </div>
+        <!-- page2 end -->
+        <div class="page" id="page3" style="--c: lightsalmon;">3</div>
+        <div class="page" style="--c: lightskyblue;">4</div>
+    </div>
+</body>
+<style>
+/* 初始化 */
+*{
+    margin: 0;
+    padding: 0;
+
+    /* 取消下划线等文本样式 */
+    text-decoration: none;
+
+    /* 平滑滚动 */
+    scroll-behavior: smooth;
+}
+
+/* nav 样式 */
+.nav{
+    position: fixed;
+    display: flex;
+    /* justify-content: flex-end; */
+    margin: 0 3vw;
+    z-index: 0;
+    width: 94vw;
+    height: 50px;
+    /* box-shadow: 1px 1px 10px rgba(0,0,0,.5); */
+    border-radius: 10px;
+    
+    font-family: "幼圆";
+    font-weight:bolder;
+}
+ul,li{
+    list-style: none;
+    display:inline;
+    text-decoration: none;
+
+}
+ul{
+    
+    display: flex;
+    height: inherit;
+    align-items: center;
+}
+
+/* 音乐与其他 */
+.nav div:last-child{
+    flex: 1;
+    border-radius: 10px;
+    border: 1px red;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav #textMusic{
+    font-family: "幼圆";
+    font-weight:bolder;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    align-items: center;
+    margin: 10px;
+}
+audio{
+    opacity:0.5;
+    display: none;
+    height: 65%;
+    margin: auto 0;
+    width: 150px;
+}
+a{
+    color: white;
+    font-weight: 500;
+    
+    font-size: 25px;
+    /* display: inline-block; */
+    /* width: 50px; */
+    /* flex: 1; */
+    align-items: center;
+    margin: 10px;
+    /* background-color: pink; */
+}
+
+
+a:hover{
+    /* transition: 0.1s; */
+    color: aquamarine;
+
+}
+/* 导航 end */
+
+
+/* 容器样式 */
+.container{
+    /* 100%窗口宽度和高度 */
+    width: 100vw;
+    height: 100vh;
+    /* 设置滚动贴合的方式：沿Y轴滚动 mandatory表示强制滚动 */
+    scroll-snap-type: y mandatory;
+    /* 需要把滚动条设置到直接父容器，scroll-snap-type才能生效 */
+    /* 溢出时，垂直保留滚动条，水平隐藏滚动条 */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.page{
+    /* 100%窗口宽度和高度 块元素独占一行，向下排列溢出*/
+    width: 100vw;
+    height: 100vh;
+    /* 弹性布局 子项居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 通过var函数调用自定义属性--c，设置各个div的背景颜色 */
+    background-color: var(--c);
+    /* 设置下一页的内容会滚动贴合到顶部 */
+    scroll-snap-align: start;
+}
+/* 容器 end */
+
+/* 第一页 */
+.container .page:nth-child(1){
+    font-size:200px;
+    font-family:"Microsoft YaHei";
+}
+
+
+/* 第二页 */
+
+
+
+
+/* 手风琴 start */
+.shell{
+    width:90%;
+    height: 500px;
+    display: flex;
+}
+.box{
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin:0 20px;
+    box-shadow:10px 10px 20px rgba(0,0,0,.5);
+    border-radius: 20px;
+    border:10px solid #fff;
+    background-color: #fff;
+}
+.box>img{
+    width: 200%;
+    height: 85%;
+    object-fit: cover;
+    transition: .5s;
+}
+.box>span{
+    font:45px '优设标题黑';
+    text-align: center;
+    height:15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    flex-basis: 40%;
+}
+.box:hover>img{
+    width: 100%;
+    height: 100%;
+}
+/* 手风琴 end */
+
+
+/* 动画 */
+.zhuan{
+    animation: rotate 5s infinite ;
+    animation-timing-function:linear;
+}
+#textMusic{
+    transition: all 1s ease;
+}
+#textMusic:hover{
+    transform:scale(1.2);
+}
+
+
+@keyframes rotate{
+    0%{
+        rotate: 0deg;
+        
+    }
+    50%{
+        rotate: 180deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+
+
+</style>
+
+<script>
+    var textMusic=document.querySelector('#textMusic');
+    var audio=document.querySelector('audio');
+    
+    textMusic.onclick=function(){
+        if(textMusic.innerHTML=="播放音乐"){
+            audio.play();
+            textMusic.innerHTML="停止播放";
+            textMusic.className='zhuan';
+        }else{
+            audio.pause();
+            textMusic.innerHTML="播放音乐";
+            textMusic.className='end';
+        }
+    }
+</script>
+</html>

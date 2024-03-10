@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- --c为自定义属性（颜色值），可通过var函数进行调用 -->
+        <div style="--c: lightcoral;">1</div>
+        <div style="--c: lightseagreen;">2</div>
+        <div style="--c: lightsalmon;">3</div>
+        <div style="--c: lightskyblue;">4</div>
+    </div>
+</body>
+<style>
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+.container{
+    /* 100%窗口宽度和高度 */
+    width: 100vw;
+    height: 100vh;
+    /* 设置滚动贴合的方式：沿Y轴滚动 mandatory表示强制滚动 */
+    scroll-snap-type: y mandatory;
+    /* 需要把滚动条设置到直接父容器，scroll-snap-type才能生效 */
+    /* 溢出时，垂直保留滚动条，水平隐藏滚动条 */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.container div{
+    /* 100%窗口宽度和高度 */
+    width: 100vw;
+    height: 100vh;
+    /* 弹性布局 居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 通过var函数调用自定义属性--c，设置各个div的背景颜色 */
+    background-color: var(--c);
+    font-size: 200px;
+    color: #fff;
+    /* 设置下一页的内容会滚动贴合到顶部 */
+    scroll-snap-align: start;
+    
+}
+
+</style>
+</html>

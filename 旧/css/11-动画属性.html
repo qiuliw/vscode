@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="banner">
+        <div id="box">
+            <div class="div" style="background-color: aquamarine;">1</div>
+            <div class="div" style="background-color: blueviolet;">2</div>
+            <div class="div" style="background-color: coral;">3</div>
+            <div class="div" style="background-color: deeppink;">4</div>
+        </div>
+    </div>
+</body>
+<style>
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+#banner{
+    overflow: hidden;
+    width:100vw;
+    height:50vh;
+}
+#box{
+    width:400vw;
+    height:100%;
+    animation: m 4s infinite alternate;
+}
+.div{
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+@keyframes m{
+    25%{
+        margin-left: -100vw;
+    }
+    75%{
+        margin-left: -200vw;
+    }
+    100%{
+        margin-left: -300vw;
+    }
+}
+
+</style>
+</html>

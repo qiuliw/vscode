@@ -1,0 +1,32 @@
+;将DAT字存储单元中的16位二进制数分成四组，每组四位，然后将这四组数分别放至DAT1、DAT2、DAT3和DAT4这4个字节单元中。
+DATA SEGMENT
+    DAT DW ?
+    DAT1 DB ?
+    DAT2 DB ?
+    DAT3 DB ?
+    DAT4 DB ?
+
+DATA ENDS
+CODE SEGMENT
+    ASSUME  CS:CODE,DS:DATA
+START:
+    MOV DX,DATA
+    MOV DS,DX
+    
+    LEA SI,DAT
+    MOV DAT1,SI
+    AND DAT1,0FH
+    MOV DAT2,SI
+    MOV CL,4
+    SHR DAT2,4
+    INC SI
+    MOV DAT3,SI
+    AND DAT3,0FH
+    MOV DAT4,SI
+    MOV CL,4
+    SHR DAT4,4
+    
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START

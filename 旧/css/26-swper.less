@@ -1,0 +1,36 @@
+html{
+    font-size: 12px;
+}
+.focus{
+    /* 箭头依赖于父组件的定位 */
+    position: relative;
+
+    .swiper-container{
+        height: 200px;
+        width: 400px;
+        margin: auto;
+        border: lightcoral 5px solid;
+        overflow: hidden;
+    
+        .swiper-wrapper{
+            
+            .swiper-slide{
+                /* 改主轴为y轴 */
+                flex-direction: column;
+                a{
+                    width: 18rem;
+                    img{
+                        width: 100%;
+                        // height: 100%;
+                    }
+                }
+                p{
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+

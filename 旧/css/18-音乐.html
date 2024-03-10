@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>简单音乐播放器</title>
+		<link rel="stylesheet" href="css/music.css">
+	</head>
+	<body>
+		<h3>简单音乐播放器</h3>
+		<hr />
+
+		<!--音乐文件的载入-->
+		<!-- preload 属性规定是否在页面加载后载入视频。 -->
+		<audio id="audio" src="music/Serenade.mp3" preload>
+			对不起，您的浏览器不支持HTML5音频播放。
+		</audio>
+
+		<!--仿CD样式圆形图片-->
+		<div id="CDimage">
+			<img src="image/sky.jpg" />
+		</div>
+
+		<!--音量调节进度条-->
+		<!-- step:买不，间隔，每次加减的多少0,0.1,0.2 -->
+		<div>
+			<input id="volume" type="range" min="0" max="1" step="0.1" />
+		</div>
+
+
+		<!--显示歌曲名称-->
+		<div>
+			当前正在播放: <span id="title">小夜曲</span>
+		</div>
+
+		<!--音乐播放器按钮-->
+		<div>
+			<button id="prevBtn">前
+                <!-- 
+                    <img src="image/previous.png" width="50" height="50" />
+                 -->
+            </button>
+			<button id="toggleBtn">放
+                <!-- <img src="image/play.png" width="50" height="50" /> -->
+            </button>
+			<button id="nextBtn">下
+                <!-- <img src="image/next.png" width="50" height="50" /> -->
+            </button>
+		</div>
+		<script>
+			/* 获取音乐audio，音量volume，暂停播放toggleBtn，歌曲名称title */
+			var music = document.getElementById("audio");
+			var volume = document.getElementById("volume");
+			var toggleBtn = document.getElementById("toggleBtn");
+			var title = document.getElementById("title");
+			var prevBtn = document.getElementById("prevBtn");
+			var nextBtn = document.getElementById("nextBtn");
+
+			//音乐路径列表
+			var list = new Array("./music/Que.mp3", "./music/Que.mp3", "./music/Que.mp3");
+
+			//音乐标题列表
+			var titleList = new Array("小夜曲", "无尽的地平线", "月光下的云海");
+
+			//定义当前是第几首曲目
+			var i = 0;
+
+			toggleBtn.onclick = function() {
+				if (music.paused) {
+					music.play();
+					//播放音乐
+					toggleBtn.innerHTML = '<img src="image/pause.png" width="50" height="50"/>';
+				} else {
+					music.pause();
+					//暂停音乐
+					toggleBtn.innerHTML = '<img src="image/play.png" width="50" height="50"/>';
+				}
+			}
+			//切换上一首歌曲
+			prevBtn.onclick = function() {
+				if (i == 0) {
+					i = list.length - 1;
+				} else {
+					i--;
+					music.pause();
+					music.src = list[i];
+					title.innerHTML = titleList[i];
+					music.play();
+				}
+
+			}
+			//切换下一首歌曲
+			nextBtn.onclick = function() {
+				if (i == list.length - 1)
+					i = 0;
+				else
+					i++;
+				music.pause();
+				music.src = list[i];
+				title.innerHTML = titleList[i];
+				music.play();
+			}
+
+			//设置音量大小
+			volume.onchange=function(){
+				 music.volume = volume.value;
+			}
+		</script>
+	</body>
+</html>
+

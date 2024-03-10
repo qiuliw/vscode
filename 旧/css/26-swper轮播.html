@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="swiper-8.4.7/swiper/swiper-bundle.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      /* background: #eee; */
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+	  transition: 300ms;
+    /* 其余兄弟0.8 */
+	  transform: scale(0.8);
+    opacity: 0.4;
+    }
+    /* 当前选中的slide */
+	.swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+      z-index:999;
+      opacity: 1;
+	}
+    /* end */
+  </style>
+
+  <!-- 自定义 -->
+  <link rel="stylesheet" href="26-swper.css">
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="focus">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <a href="#"><img src="../img/1.jpg"></a>
+              <p>老师教你应对面试技巧</p>
+          </div>
+          <div class="swiper-slide">
+              <a href="#"><img src="../img/2.jpg"></a>
+              <p>老师教你应对面试技巧</p>
+          </div>
+          <div class="swiper-slide">
+              <a href="#"><img src="../img/3.jpg"></a>
+              <p>老师教你应对面试技巧</p>
+          </div>
+          <div class="swiper-slide">
+              <a href="#"><img src="../img/4.jpg"></a>
+              <p>老师教你应对面试技巧</p>
+          </div>
+          <div class="swiper-slide">
+              <a href="#"><img src="../img/5.jpg"></a>
+              <p>老师教你应对面试技巧</p>
+          </div>
+      </div>
+    </div>
+    <!-- Add Arrows 添加左右箭头-->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="swiper-8.4.7/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    // 沙箱函数，防止变量冲突
+    (function (){
+        var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        // 滚轮切换
+        mousewheel: true,
+        // 添加左右箭头
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        }
+        });
+    })()
+  </script>
+</body>
+</html>

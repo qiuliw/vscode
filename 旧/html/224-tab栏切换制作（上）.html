@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .tab{
+            width: 500px;
+            height: 150px;
+            background-color: aliceblue;
+        }
+        .tab_list{
+            height: 30px;
+        }
+        li{
+            background-color: #ccc;
+            float: left;
+            height: 30px;
+            width: 20%;
+        }
+        .tab_com{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .current{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_com">
+            <div class="item" style="display:block;">
+                商品介绍模块内容
+            </div>
+            <div class="item" style="display:none">
+                规格和包装模块内容
+            </div>
+            <div class="item" style="display:none">
+                售后爆照模块内容
+            </div>
+            <div class="item" style="display:none">
+                商品评价
+            </div>
+            <div class="item" style="display:none">
+                手机社区模块内容
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var tab_list=document.querySelector('.tab_list');
+    var lis=tab_list.querySelectorAll('li');
+    var tab_com=document.querySelector('.tab_com');
+    var items=tab_com.querySelectorAll('.item');
+    for(let i=0;i<lis.length;i++){
+        lis[i].onclick=function(){
+            for(let i=0;i<lis.length;i++){
+                lis[i].className='';
+                items[i].style.display='none';
+            }
+            this.className='current'
+            items[i].style.display='block';
+        }
+    }
+</script>
+</html>

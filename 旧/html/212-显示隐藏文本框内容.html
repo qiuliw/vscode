@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- 首先表单需要两个新事件，获得焦点 onfocus 失去焦点onblur -->
+<body>
+    <input type="text" value="手机">
+</body>
+<script>
+//1.获取元素
+var text = document.querySelector('input');
+//2.注册事件 获得焦点事件 onfocus
+text.onfocus = function(){
+    text.value=''
+}
+// 注册事件 失去焦点 onblur
+text.onblur = function(){
+    
+}
+</script>    
+</html>

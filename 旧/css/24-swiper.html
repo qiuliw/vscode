@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper-8.4.7/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <section>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"><img src="../img/1.jpg"></a>
+                    <p>老师教你应对面试技巧</p>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img src="../img/2.jpg"></a>
+                    <p>老师教你应对面试技巧</p>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img src="../img/3.jpg"></a>
+                    <p>老师教你应对面试技巧</p>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img src="../img/4.jpg"></a>
+                    <p>老师教你应对面试技巧</p>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img src="../img/5.jpg"></a>
+                    <p>老师教你应对面试技巧</p>
+                </div>
+            </div>
+            <!-- Add Arrows 添加左右箭头-->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!-- 引入js文件 -->
+    <script src="swiper-8.4.7/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        // 沙箱函数，防止变量冲突
+        (function(){
+            var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            // 滚轮切换
+            mousewheel: true,
+            // 添加左右箭头
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+            });
+        })();
+    </script>
+</body>
+<style>
+    
+</style>
+</html>

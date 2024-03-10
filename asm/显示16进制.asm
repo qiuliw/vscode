@@ -1,0 +1,31 @@
+;编程实现将 BX 寄存器内的二进制数用 16 进制的形式，在屏幕上显示出来。
+CODE SEGMENT
+    ASSUME  CS:CODE,DS:DATA
+START:
+    MOV DX,DATA
+    MOV DS,DX
+    MOV BX,23H
+    
+    MOV AL,BL
+    CMP AL,10
+    JB L1
+    ADD AL,37H
+    JMP LL
+L1: ADD AL,30H
+    MOV AH,02H
+    INT 21H
+
+LL:
+    MOV AL,BH
+    CMP AL,10
+    JB L2
+    ADD AL,37H
+    JMP LL
+L2: ADD AL,30H
+    MOV AH,02H
+    INT 21H
+
+    MOV AH,4CH
+    INT 21H
+CODE ENDS
+    END START

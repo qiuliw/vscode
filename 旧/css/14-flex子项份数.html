@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: lightgreen;
+            margin: 0 auto;
+        }
+        section div:first-child {
+            width: 100px;
+            height: 150px;
+            background-color: lightcoral;
+        }
+        section div:nth-child(2){
+            flex:1;
+            background-color: yellow;
+        }
+        section div:last-child{
+            width: 100px;
+            height: 150px;
+            background-color: lightcoral;
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>

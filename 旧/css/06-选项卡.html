@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="xuan">
+        <div class="card">
+            <div  id="div1">1</div>
+            <div  id="div2">2</div>
+            <div id="div3">3</div>
+            <div id="div4">4</div>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+</body>
+
+<style>
+div{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.xuan{
+    position: relative;
+    width:500px;
+    height:300px;
+}
+.card{
+    height: 50px;
+    width: 100%;
+    border:0;
+}
+.card > div{
+
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card>div:first-child{
+    background-color: aqua;
+}
+.card>div:nth-child(2){
+    background-color: burlywood;
+}
+.card>div:nth-child(3){
+    background-color: pink;
+}
+.card>div:nth-child(4){
+    background-color: palegreen;
+}
+.content{
+    float: left;
+    width: 100%;
+    height:100%;
+    background-color: rebeccapurple;
+}
+
+</style>
+</html>

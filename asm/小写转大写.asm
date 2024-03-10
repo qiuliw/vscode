@@ -1,0 +1,36 @@
+DATA SEGMENT
+    CHARS DB "abcd",'$'
+    STR DB "PLESE INPUT AGAIN","$"
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE,DS:DATA
+START:
+    MOV DX,DATA
+    MOV DS,DX
+    LEA SI,CHARS
+L2:
+    MOV AL,[SI]
+    CMP AL,'a'
+    JB L1
+    CMP AL,'z'
+    JA L1
+    CMP AL,'$'
+    JZ L3
+    SUB AL,20H
+    MOV [SI],AL
+    INC SI
+    JMP L2
+L1:
+    LEA DX,STR
+    JMP NEXT
+L3:
+    LEA DX,CHARS
+NEXT:
+    MOV AH,09H
+    INT 21H
+    
+    MOV AL,4CH
+    INT 21H
+CODE ENDS
+    END START

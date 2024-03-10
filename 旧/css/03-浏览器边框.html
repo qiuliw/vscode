@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+<style>
+#box1{
+    width: 200px;
+    height: 200px;
+    border: 1px solid blue;
+    /* 设置圆角 完整格式 2个参数 8个值 左上水平 右上水平 右下水平 左下水平 / 左上垂直 ...*/
+    border-radius: 10px 20px 30px 40px / 0px 20px 30px 40px;
+    /* 4个值 各角水平与垂直*/
+    border-radius: 10px 20px 30px 40px;
+    /* 1个参数 2个值 对角线：（左上+右下）+（右上+左下）*/
+    border-radius: 10px 20px;
+    /* 1个值 四角*/
+    border-radius: 10px;
+}
+</style>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        .change{
+            height:200px;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div>wenben</div>
+</body>
+<script>
+    //1. 使用element.style 获得修改元素样式
+    // var test = document.querySelector('div');
+    // test.onclick = function(){
+    //     this.style.backgroundColor = 'purple';
+    // }
+    //2. 使用 element.className 修改元素属性 适合样式较多 功能复杂的情况
+    var test = document.querySelector('div');
+    test.onclick = function(){
+        this.className = 'change';
+    }
+</script>
+</html>

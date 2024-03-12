@@ -37,3 +37,7 @@ C语言
 ## 编程练习
 - [大一大二编程入门练习](https://www.nowcoder.com/ta/beginner-programmers-v1)
 
+
+
+图片引用测试
+![图片的引用测试](./旧/css/png/p1.png)

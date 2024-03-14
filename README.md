@@ -7,8 +7,6 @@
 
 ## C笔记
 
-- [C笔记1-入门](https://gitee.com/weiliqiu/vscode/blob/master/%E7%AC%94%E8%AE%B0/C++%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.md)
-- [C笔记2-进阶](https://gitee.com/weiliqiu/vscode/blob/master/%E7%AC%94%E8%AE%B0/C++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B.md)
 
 ## 套题
 

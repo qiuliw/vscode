@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 int main(){
-    int i,j;
-    for(j=10;j<11;j++){
-        for(i=9;i==j-1;i++){
-            printf("%d",j);
-        }
+    char c;
+    int count=0;
+    while(scanf("%c",&c)){
+        if(c=='\n')break;
+        if(c>='a'&&c<='z'||c>='A'&&c<='Z')count++;
     }
+    printf("%d",count);
     return 0;
 }

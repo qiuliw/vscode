@@ -10,7 +10,4 @@
 .vscode
 
 # test
-
-Test.c
-
 cpp/Test.c

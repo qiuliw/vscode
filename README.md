@@ -1,13 +1,13 @@
 
 ## 编程题
 
-1. [2024JXN15套模拟 编程题](https://gitee.com/weiliqiu/vscode/tree/master/jxn15/24)
+1. [2024JXN15套模拟 编程题](./jxn15/24/)
 
-2. [计算机真题18~22 编程题](https://gitee.com/weiliqiu/vscode/tree/master/%E7%9C%9F%E9%A2%98)
+2. [计算机真题18~22 编程题](./真题/)
 
 ## C笔记
-- [基础语法](https://gitee.com/weiliqiu/vscode/blob/master/%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/1.%20C%20%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%20-%20HQ.md)
-- [其他](https://gitee.com/weiliqiu/vscode/tree/master/%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0)
+- [基础语法](./笔记/C语言笔记/1.%20C%20基础语法.md)
+- [其他](./笔记/C语言笔记/)
 
 ## 套题
 

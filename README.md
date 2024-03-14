@@ -6,7 +6,8 @@
 2. [计算机真题18~22 编程题](https://gitee.com/weiliqiu/vscode/tree/master/%E7%9C%9F%E9%A2%98)
 
 ## C笔记
-
+- [基础语法](https://gitee.com/weiliqiu/vscode/blob/master/%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/1.%20C%20%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%20-%20HQ.md)
+- [其他](https://gitee.com/weiliqiu/vscode/tree/master/%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0)
 
 ## 套题
 

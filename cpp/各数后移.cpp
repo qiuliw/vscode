@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <stdio.h>
 #include <stdlib.h>
 /*
@@ -9,12 +10,16 @@
 */
 int main(){
     int arr1[100],arr2[100],n,i,j;
-    for(i=0;i<10;i++)
-        scanf("%d",arr1+i);
     scanf("%d",&n);
-    for(i=0,j=n;i<10;i++){
-        arr2[0]=arr1[j];
+    for(i=0;i<n;i++)
+        scanf("%d",arr1+i);
+    scanf("%d",&j);
+    for(i=0;i<n;i++){
+        arr2[i]=arr1[j];
         ++j;
-        j%=10;
+        j%=n;
     }
+    for(i=0;i<n;i++)
+        printf("%d ",arr2[i]);
+
 }
